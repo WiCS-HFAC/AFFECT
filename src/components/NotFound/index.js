@@ -4,14 +4,10 @@ import classnames from 'classnames';
 import './style.css';
 
 export default class NotFound extends Component {
-  static propTypes = {}
-  static defaultProps = {}
-  state = {}
-
   render() {
-    const { className, ...props } = this.props;
+    const { className } = this.props;
     return (
-      <div className={classnames('NotFound', className)} {...props}>
+      <div className={classnames('NotFound', className)}>
         <h1>
           404 <small>Not Found :(</small>
         </h1>
