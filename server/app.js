@@ -5,14 +5,14 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const config = require('~/Desktop/config.json');
+const config = require('/Users/DowntonAbbey/Desktop/config.json');
 
 const app = express();
-
+console.log("Adding models");
 app.use(orm.express(config.url, {
   define: function (db, models, next) {
     models.Users = db.define("users", {
-      user_id: int,
+      user_id: {type: "integer"},
       username: String,
       password: String,
       is_active: Boolean,
@@ -21,7 +21,7 @@ app.use(orm.express(config.url, {
       first_name: String,
       last_name: String,
       address: String,
-      role_id: int
+      role_id: {type: "integer"}
     }, {
         methods: {
           fullName: function () {
@@ -31,19 +31,19 @@ app.use(orm.express(config.url, {
     });
 
     models.Roles = db.define("roles", {
-      type_id: int,
+      type_id: {type: "integer"},
       type: String
     });
 
     models.Parents = db.define("parents", {
-      user_id: int,
-      worker_id: int,
+      user_id: {type: "integer"},
+      worker_id: {type: "integer"},
       ssn: String,
       birth_date: Date, 
       birthplace: String, 
       nationality: String, 
-      height_ft: int, 
-      height_in: int, 
+      height_ft: {type: "integer"}, 
+      height_in: {type: "integer"}, 
       stature: String, 
       hair_color: String, 
       eye_color: String, 
@@ -64,8 +64,8 @@ app.use(orm.express(config.url, {
       meds: String, 
       safe_assess: String, 
       fam_checklist: String, 
-      ann_income: int, 
-      month_expenses: int, 
+      ann_income: {type: "integer"}, 
+      month_expenses: {type: "integer"}, 
       ref_name: String, 
       ref_addr: String, 
       ref_phone: String, 
@@ -75,7 +75,7 @@ app.use(orm.express(config.url, {
     next();
   }
 }));
-
+console.log("Finished adding models");
 // view engine setup
 // app.set('views', path.join(__dirname, 'views'));
 // app.set('view engine', 'jade');
@@ -88,8 +88,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/users', users);
+//app.use('/', routes);
+//app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
