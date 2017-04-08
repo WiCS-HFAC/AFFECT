@@ -41,15 +41,19 @@ Project repository for [Hack For A Cause](https://hackforacause.io)
 Follow these instructions to contribute to the project.
 
 Clone this repository:
+
 `git clone https://github.com/WiCS-HFAC/AFFECT.git`
+
 `cd AFFECT`
 
 Install Node.js and NPM if you don't already have it.
 
 Install Yarn:
+
 `npm install -g yarn`
 
 Install dependencies:
+
 `yarn install`
 
 You're ready to code!
@@ -65,15 +69,18 @@ You're ready to code!
 Be sure to install Docker and start a Docker-machine if necessary.
 
 Create a Docker image:
+
 `docker build -t AFFECT`
 
 Start container:
+
 `docker run -p 80:9000 --name AFFECT-instance AFFECT`
 
 
 ## Contribute
 
 Please refer to our Waffle board for tasks that need doing!
+
 [![Stories in Ready](https://badge.waffle.io/WiCS-HFAC/AFFECT.svg?label=ready&title=Ready)](http://waffle.io/WiCS-HFAC/AFFECT)
 
 
