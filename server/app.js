@@ -9,7 +9,7 @@ const config = require('~/Desktop/config.json');
 
 const app = express();
 
-app.use(orm.express('postgres://localhost:5432/test', {
+app.use(orm.express(config.url, {
   define: function (db, models, next) {
     models.Users = db.define("users", {
       user_id: int,
@@ -36,7 +36,40 @@ app.use(orm.express('postgres://localhost:5432/test', {
     });
 
     models.Parents = db.define("parents", {
-
+      user_id: int,
+      worker_id: int,
+      ssn: String,
+      birth_date: Date, 
+      birthplace: String, 
+      nationality: String, 
+      height_ft: int, 
+      height_in: int, 
+      stature: String, 
+      hair_color: String, 
+      eye_color: String, 
+      skin_color: String, 
+      prefer_sex: String, 
+      prefer_age: String, 
+      prefer_sib_group_size: String, 
+      prefer_sib_group_gender: String, 
+      prefer_religion: String, 
+      bio: String, 
+      prev_foster: String, 
+      investigation: String, 
+      inv_date: Date, 
+      inv_reason: String, 
+      inv_outcome: String, 
+      med_gen_condition: String, 
+      med_last_exam: Date, 
+      meds: String, 
+      safe_assess: String, 
+      fam_checklist: String, 
+      ann_income: int, 
+      month_expenses: int, 
+      ref_name: String, 
+      ref_addr: String, 
+      ref_phone: String, 
+      ref_email: String
     });
 
     next();
