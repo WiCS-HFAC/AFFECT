@@ -10,13 +10,16 @@
     "debug": "^2.6.3",
     "express": "^4.15.2",
     "morgan": "^1.8.1",
+    "orm": "^3.2.3",
     "pg": "^6.1.5",
     "react": "^15.5.3",
     "react-dom": "^15.5.3",
     "react-router-dom": "^4.0.0",
+    "redux": "^3.6.0",
     "serve-favicon": "^2.4.2"
   },
   "devDependencies": {
+    "babel-cli": "^6.24.1",
     "babel-preset-es2016": "^6.24.1",
     "babel-preset-react": "^6.24.1",
     "chai": "^3.5.0",
