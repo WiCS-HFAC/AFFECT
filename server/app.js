@@ -5,7 +5,7 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const config = require('/Users/DowntonAbbey/Desktop/config.json');
+const config = require('../config.json');
 
 const app = express();
 console.log("Adding models");
@@ -21,8 +21,8 @@ app.use(orm.express(config.url, {
       first_name: String,
       last_name: String,
       address: String,
-      phone_home: String, 
-      phone_cell: String, 
+      phone_home: String,
+      phone_cell: String,
       type_id: {type: "serial", unique: false}
     }, {
         methods: {
@@ -41,41 +41,41 @@ app.use(orm.express(config.url, {
       user_id: {type: "serial"},
       worker_id: {type: "serial"},
       ssn: String,
-      birth_date: Date, 
-      birthplace: String, 
-      nationality: String, 
-      height_ft: {type: "integer"}, 
-      height_in: {type: "integer"}, 
-      stature: String, 
-      hair_color: String, 
-      eye_color: String, 
-      skin_color: String, 
-      prefer_sex: String, 
-      prefer_age: String, 
-      prefer_sib_group_size: String, 
-      prefer_sib_group_gender: String, 
-      prefer_religion: String, 
-      bio: String, 
-      prev_foster: String, 
-      investigation: String, 
-      inv_date: Date, 
-      inv_reason: String, 
-      inv_outcome: String, 
-      med_gen_condition: String, 
-      med_last_exam: Date, 
-      meds: String, 
-      safe_assess: String, 
-      fam_checklist: String, 
-      ann_income: {type: "integer"}, 
-      month_expenses: {type: "integer"}, 
-      ref_name: String, 
-      ref_addr: String, 
-      ref_phone: String, 
+      birth_date: Date,
+      birthplace: String,
+      nationality: String,
+      height_ft: {type: "integer"},
+      height_in: {type: "integer"},
+      stature: String,
+      hair_color: String,
+      eye_color: String,
+      skin_color: String,
+      prefer_sex: String,
+      prefer_age: String,
+      prefer_sib_group_size: String,
+      prefer_sib_group_gender: String,
+      prefer_religion: String,
+      bio: String,
+      prev_foster: String,
+      investigation: String,
+      inv_date: Date,
+      inv_reason: String,
+      inv_outcome: String,
+      med_gen_condition: String,
+      med_last_exam: Date,
+      meds: String,
+      safe_assess: String,
+      fam_checklist: String,
+      ann_income: {type: "integer"},
+      month_expenses: {type: "integer"},
+      ref_name: String,
+      ref_addr: String,
+      ref_phone: String,
       ref_email: String
     });
 
     next();
-  
+
   // db.sync(function(err) {
   //   if (err) throw err;
 
@@ -109,7 +109,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', function (req, res) {
-  // req.models is a reference to models used above in define() 
+  // req.models is a reference to models used above in define()
   // req.models.Roles.create({ type_id: 666, type: "Parent" }, function (err) {
   //   if (err) throw err;
 

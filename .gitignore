@@ -183,6 +183,7 @@ typings/
 
 # sftp configuration file
 sftp-config.json
+config.json
 
 # Package control specific files
 Package Control.last-run
