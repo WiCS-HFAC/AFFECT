@@ -556,3 +556,23 @@ __pycache__/
 *.xsd.cs
 
 # End of https://www.gitignore.io/api/vim,node,sass,linux,macos,windows,webstorm,jetbrains,sublimetext,visualstudio
+
+
+# Provided by create-react-app
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
