@@ -12,7 +12,7 @@ console.log("Adding models");
 app.use(orm.express(config.url, {
   define: function (db, models, next) {
     models.Users = db.define("users", {
-      user_id: {type: "integer"},
+      user_id: {type: "serial", key: true},
       username: String,
       password: String,
       is_active: Boolean,
@@ -21,7 +21,9 @@ app.use(orm.express(config.url, {
       first_name: String,
       last_name: String,
       address: String,
-      role_id: {type: "integer"}
+      phone_home: String, 
+      phone_cell: String, 
+      type_id: {type: "serial", unique: false}
     }, {
         methods: {
           fullName: function () {
@@ -31,13 +33,13 @@ app.use(orm.express(config.url, {
     });
 
     models.Roles = db.define("roles", {
-      type_id: {type: "integer"},
+      type_id: {type: "serial", key: true},
       type: String
     });
 
     models.Parents = db.define("parents", {
-      user_id: {type: "integer"},
-      worker_id: {type: "integer"},
+      user_id: {type: "serial"},
+      worker_id: {type: "serial"},
       ssn: String,
       birth_date: Date, 
       birthplace: String, 
@@ -73,6 +75,24 @@ app.use(orm.express(config.url, {
     });
 
     next();
+  
+  // db.sync(function(err) {
+  //   if (err) throw err;
+
+  //   //add a row to the Users table
+  //   Users.create({ user_id: 01, username: "user", password: "password", is_active: true, salt: "salt"}, function (err) {
+  //     if (err) throw err;
+
+  //     // query the person table by surname
+  //     Users.find({ username: "user" }, function (err, people) {
+  //       if (err) throw err;
+
+  //       console.log("People found: %d", people.length);
+  //       console.log("First person: %s, user_id %d", people[0].username, people[0].user_id);
+  //     });
+  //   });
+  // });
+
   }
 }));
 console.log("Finished adding models");
@@ -88,7 +108,34 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//app.use('/', routes);
+app.get('/', function (req, res) {
+  // req.models is a reference to models used above in define() 
+  // req.models.Roles.create({ type_id: 666, type: "Parent" }, function (err) {
+  //   if (err) throw err;
+
+  //   req.models.Roles.find({ type_id: 1 }, function (err, roles) {
+  //     roles[0].save(function (err) {
+
+  //     });
+  //   });
+  // });
+
+  req.models.Users.create({ username: "user", password: "password", is_active: true, salt: "salt", type_id: 1 }, function (err) {
+    if (err) throw err;
+
+    // query the person table by surname
+    req.models.Users.find({ username: "user" }, function (err, people) {
+      if (err) throw err;
+
+      console.log("People found: %d", people.length);
+      console.log("First person: %s", people[0].username);
+
+      people[0].save(function (err) {
+        if (err) throw err;
+      });
+    });
+  });
+});
 //app.use('/users', users);
 
 // catch 404 and forward to error handler
