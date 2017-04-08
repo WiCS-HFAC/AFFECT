@@ -4,14 +4,10 @@ import classnames from 'classnames';
 import './style.css';
 
 export default class Login extends Component {
-  static propTypes = {}
-  static defaultProps = {}
-  state = {}
-
   render() {
-    const { className, ...props } = this.props;
+    const { className } = this.props;
     return (
-      <div className={classnames('Login', className)} {...props}>
+      <div className={classnames('Login', className)}>
         <h1>
           Login
         </h1>

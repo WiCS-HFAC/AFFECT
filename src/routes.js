@@ -1,15 +1,17 @@
 import React from 'react';
-import { Router, Route } from 'react-router';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import App from './components/App';
 import Login from './components/Login';
 import NotFound from './components/NotFound';
 
-const Routes = (props) => (
-  <Router {...props}>
-    <Route path="/" component={App} />
-    <Route path="/login" component={Login} />
-    <Route path="*" component={NotFound} />
+const Routes = () => (
+  <Router>
+    <div>
+        <Route path="/" component={App} />
+        <Route path="/login" component={Login} />
+        <Route path="/404" component={NotFound} />
+    </div>
   </Router>
 );
 
