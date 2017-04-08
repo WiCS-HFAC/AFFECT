@@ -1,15 +1,12 @@
-var express = require('express');
-var orm = require('orm');
-var path = require('path');
-var favicon = require('serve-favicon');
-var logger = require('morgan');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
+const express = require('express');
+const orm = require('orm');
+const path = require('path');
+const favicon = require('serve-favicon');
+const logger = require('morgan');
+const cookieParser = require('cookie-parser');
+const bodyParser = require('body-parser');
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
-
-var app = express();
+const app = express();
 
 app.use(orm.express('postgres://localhost:5432/test', {
   define: function (db, models, next) {
@@ -51,7 +48,7 @@ app.use(orm.express('postgres://localhost:5432/test', {
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));s
+app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -91,5 +88,19 @@ app.use(function(err, req, res, next) {
   });
 });
 
+/*
+
+// Setup logger
+app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :response-time ms'));
+
+// Serve static assets
+app.use(express.static(path.resolve(__dirname, '..', 'build')));
+
+// Always return the main index.html, so react-router render the route in the client
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
+});
+
+*/
 
 module.exports = app;
