@@ -1,9 +1,10 @@
 'use strict';
 
 const app = require('./app');
+const express = require('express');
 const pg = require('pg');
 const orm = require('orm');
-const PORT = process.env.PORT || 9000;
+const PORT = 9000;
 
 // TODO: Remove jade as a dependency
 
