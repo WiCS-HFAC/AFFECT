@@ -3,12 +3,12 @@ import classnames from 'classnames';
 
 import './style.css';
 
-export default class NotFound extends Component {
+export default class Register extends Component {
   render() {
     const { className } = this.props;
     return (
-      <div className={classnames('NotFound', className)}>
-        <h1>404 <small>Not Found :(</small></h1>
+      <div className={classnames('Register', className)}>
+        <h1>Register</h1>
       </div>
     );
   }

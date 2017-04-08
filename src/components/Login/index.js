@@ -8,9 +8,7 @@ export default class Login extends Component {
     const { className } = this.props;
     return (
       <div className={classnames('Login', className)}>
-        <h1>
-          Login
-        </h1>
+        <h1>Login</h1>
       </div>
     );
   }
