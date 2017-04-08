@@ -38,25 +38,26 @@ Project repository for [Hack For A Cause](https://hackforacause.io)
 
 
 ## Install
-Follow these instructions to contribute to the project.
+*Follow these instructions to contribute to the project.*
 
-Clone this repository:
+> **Clone this repository:**
 
 `git clone https://github.com/WiCS-HFAC/AFFECT.git`
 
 `cd AFFECT`
 
-Install Node.js and NPM if you don't already have it.
+> **Install Node.js and NPM if you don't already have it.**
 
-Install Yarn:
+> **Install Yarn:**
 
 `npm install -g yarn`
 
-Install dependencies:
+> **Install dependencies:**
 
 `yarn install`
 
-You're ready to code!
+> *You're ready to code!*
+
 - `npm start` - This begins the development server.
 
 - `npm run build` - This bundles the application into static files for production (minimization, post-processing, etc.)
