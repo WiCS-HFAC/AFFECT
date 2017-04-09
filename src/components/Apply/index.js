@@ -7,7 +7,8 @@ import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Avatar from 'material-ui/Avatar';
 import Chip from 'material-ui/Chip';
 import {grey700, red300, grey200} from 'material-ui/styles/colors';
-import Card from 'material-ui/Card';
+import {Card, CardActions, CardHeader, CardTitle, CardText} from 'material-ui/Card';
+import Description from 'material-ui/svg-icons/action/description';
 import Checkbox from 'material-ui/Checkbox';
 
 import "./style.css";
@@ -20,31 +21,9 @@ const whole_style = {
 
 const dark_grey = {
     color: "#424242",
+    paddingLeft: "10px",
 }
 
-const styles = {
-  chip: {
-    margin: 4,
-      color: "white"
-  },
-  wrapper: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-}
-
-const bg_grey= {
-    backgroundColor: "#BDBDBD",
-    padding: "2% 2% 2% 2%"
-}
-
-const card_style = {
-    width: "40%",
-    height: "500px",
-    display: "flex",
-    flexFlow: "row wrap",
-    borderRadius: "8px",
-}
 
 function handleTouchTap() {
     window.open("http://www.afamilyforeverychild.org/Adoption/TheBasics/OrientationAndTraining.php");
@@ -89,45 +68,20 @@ export default class Apply extends React.Component {
 
                     <br/>
 
-                    <span>
-                        <Card style={card_style}>
-                            <h2 style={bg_grey}>Resources:</h2>
-                            <span>
-                                <Chip backgroundColor={grey200} onTouchTap={handleTouchTap} style={styles.chip}> Resource </Chip>
-                                <Chip backgroundColor={grey200} onTouchTap={handleTouchTap} style={styles.chip}> Resource </Chip>
-                                <Chip backgroundColor={grey200} onTouchTap={handleTouchTap} style={styles.chip}> Resource </Chip>
-                                <Chip backgroundColor={grey200} onTouchTap={handleTouchTap} style={styles.chip}> Resource </Chip>
-                                <Chip backgroundColor={grey200} onTouchTap={handleTouchTap} style={styles.chip}> Resource </Chip>
-                                <Chip backgroundColor={grey200} onTouchTap={handleTouchTap} style={styles.chip}> Resource </Chip>
-                                <Chip backgroundColor={grey200} onTouchTap={handleTouchTap} style={styles.chip}> Resource </Chip>
-                                <Chip backgroundColor={grey200} onTouchTap={handleTouchTap} style={styles.chip}> Resource </Chip>
-                                <Chip backgroundColor={grey200} onTouchTap={handleTouchTap} style={styles.chip}> Resource </Chip>
-                                <Chip backgroundColor={grey200} onTouchTap={handleTouchTap} style={styles.chip}> Resource </Chip>
-                                <Chip backgroundColor={grey200} onTouchTap={handleTouchTap} style={styles.chip}> Resource </Chip>
-                                <Chip backgroundColor={grey200} onTouchTap={handleTouchTap} style={styles.chip}> Resource </Chip>
-                                <Chip backgroundColor={grey200} onTouchTap={handleTouchTap} style={styles.chip}> Resource </Chip>
-                                <Chip backgroundColor={grey200} onTouchTap={handleTouchTap} style={styles.chip}> Resource </Chip>
-                                <Chip backgroundColor={grey200} onTouchTap={handleTouchTap} style={styles.chip}> Resource </Chip>
-                                <Chip backgroundColor={grey200} onTouchTap={handleTouchTap} style={styles.chip}> Resource </Chip>
-                                <Chip backgroundColor={grey200} onTouchTap={handleTouchTap} style={styles.chip}> Resource </Chip>
-                                <Chip backgroundColor={grey200} onTouchTap={handleTouchTap} style={styles.chip}> Resource </Chip>
-                                <Chip backgroundColor={grey200} onTouchTap={handleTouchTap} style={styles.chip}> Resource </Chip>
-                            </span>
-                        </Card>
+                    <div>
+                        <Card>
+                            <CardHeader
+                                title="Documents"
+                                subtitle="Please download and read these."
+                                avatar={<Description />}
+                            />
 
-                        <br/>
-
-                        <Card style={card_style}>
-                            <h2 style={bg_grey}>Forms</h2>
-                            <Checkbox label="Simple1" onTouchTap={handleTouchTap} />
-                            <Checkbox label="Simple2"/>
-                            <Checkbox label="Simple3"/>
-                            <Checkbox label="Simple4"/>
-                            <Checkbox label="Simple5"/>
-                            <Checkbox label="Simple6"/>
-                            <Checkbox label="Simple7"/>
                         </Card>
-                    </span>
+                    </div>
+
+                    <div>
+
+                    </div>
                 </div>
                 </MuiThemeProvider>
             </div>
