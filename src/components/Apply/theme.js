@@ -5,15 +5,12 @@ import {
     white, darkBlack, fullBlack,
 } from 'material-ui/styles/colors';
 
-import spacing from 'material-ui/styles/spacing';
-
 /**
  *  Light Theme is the default theme used in material-ui. It is guaranteed to
  *  have all theme variables needed for every component. Variables not defined
  *  in a custom theme will default to these values.
  */
 export default {
-    spacing: spacing,
     fontFamily: 'Roboto, sans-serif',
     borderRadius: 2,
     palette: {

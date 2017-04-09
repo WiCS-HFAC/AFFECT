@@ -8,10 +8,16 @@ import Avatar from 'material-ui/Avatar';
 import Chip from 'material-ui/Chip';
 import {grey700, red300, grey200} from 'material-ui/styles/colors';
 import {Card, CardActions, CardHeader, CardTitle, CardText} from 'material-ui/Card';
+import RaisedButton from 'material-ui/RaisedButton';
 import Description from 'material-ui/svg-icons/action/description';
 import Checkbox from 'material-ui/Checkbox';
 
 import "./style.css";
+
+const dark_grey = {
+    color: "#424242",
+    paddingLeft: "10px",
+}
 
 const whole_style = {
     display: "flex",
@@ -19,14 +25,9 @@ const whole_style = {
     alignContent: "center",
 }
 
-const dark_grey = {
-    color: "#424242",
-    paddingLeft: "10px",
-}
-
-
-function handleTouchTap() {
-    window.open("http://www.afamilyforeverychild.org/Adoption/TheBasics/OrientationAndTraining.php");
+const center_item = {
+    alignSelf: "center",
+    margin: "5px",
 }
 
 export default class Apply extends React.Component {
@@ -69,19 +70,44 @@ export default class Apply extends React.Component {
                     <br/>
 
                     <div>
-                        <Card>
+                        <Card style={center_item}>
                             <CardHeader
                                 title="Documents"
                                 subtitle="Please download and read these."
                                 avatar={<Description />}
                             />
-
+                            <CardText>
+                                <ul>
+                                    <li><a href="#">Document 1</a></li>
+                                    <li><a href="#">Document 2</a></li>
+                                    <li><a href="#">Document 3</a></li>
+                                    <li><a href="#">Document 4</a></li>
+                                    <li><a href="#">Document 5</a></li>
+                                    <li><a href="#">Document 6</a></li>
+                                    <li><a href="#">Document 7</a></li>
+                                </ul>
+                            </CardText>
                         </Card>
                     </div>
 
                     <div>
-
+                        <Card style={center_item}>
+                            <CardHeader
+                                title="Forms"
+                            />
+                            <CardText>
+                                <Checkbox label="Parent 1 Biography" />
+                                <Checkbox label="Parent 2 Biography"/>
+                                <Checkbox label="Short Answers"/>
+                                <Checkbox label="Medical History"/>
+                                <Checkbox label="Work Information"/>
+                            </CardText>
+                        </Card>
                     </div>
+
+                    <br/>
+
+                    <RaisedButton label="Sign and Complete" primary={true} style={center_item} onClick={(event) => this.handleClick(event)}/>
                 </div>
                 </MuiThemeProvider>
             </div>
