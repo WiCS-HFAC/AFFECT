@@ -27,6 +27,16 @@ const whole_style = {
     alignContent: "center",
 }
 
+function handleClick() {
+  console.log("A user registered!");
+  alert("!!!");
+
+  // console.log(this.state.username);
+  fetch("http://localhost:9000/api/register", { method: "POST", body: {username: this.state.username, password: this.state.password} });
+  // fetch("http://localhost:9000/api/register", { method: "POST", body: JSON.stringify({username: this.state.username, password: this.state.password})});
+
+}
+
 export default class Register extends Component {
     constructor(props) {
         super(props);
@@ -49,7 +59,8 @@ export default class Register extends Component {
                  hintText="Enter your username"
                  floatingLabelText="Username"
                  style={tField_style}
-                 onChange={(event,newValue) => this.setState({username:newValue})}
+
+                 onChange = {(event,newValue) => this.setState({username:newValue})}
                 />
                 <br/>
                 <TextField
@@ -124,7 +135,7 @@ export default class Register extends Component {
                     <MenuItem value={3} primaryText="Administrator" />
                     <MenuItem value={2} primaryText="Worker" />
                 </SelectField>
-                <RaisedButton label="Register" primary={true} style={button_style} onClick={(event) => this.handleClick(event)}/>
+                <RaisedButton label="Register" primary={true} style={handleClick}/>
             </div>
             </MuiThemeProvider>
             </div>

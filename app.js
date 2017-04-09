@@ -1,14 +1,18 @@
-const express = require('express');
-const orm = require('orm');
-const path = require('path');
-const favicon = require('serve-favicon');
-const logger = require('morgan');
-const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
-const config = require('../config.json');
+var express = require('express');
+var path = require('path');
+var orm = require('orm');
+var favicon = require('serve-favicon');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+var src = require('./index');
+const config = require('./config.json');
 
-const app = express();
-console.log("Adding models");
+// var routes = require('./routes/index');
+// var users = require('./routes/users');
+
+var app = express();
+
 app.use(orm.express(config.url, {
   define: function (db, models, next) {
     models.Users = db.define("users", {
@@ -75,30 +79,24 @@ app.use(orm.express(config.url, {
     });
 
     next();
-
-  // db.sync(function(err) {
-  //   if (err) throw err;
-
-  //   //add a row to the Users table
-  //   Users.create({ user_id: 01, username: "user", password: "password", is_active: true, salt: "salt"}, function (err) {
-  //     if (err) throw err;
-
-  //     // query the person table by surname
-  //     Users.find({ username: "user" }, function (err, people) {
-  //       if (err) throw err;
-
-  //       console.log("People found: %d", people.length);
-  //       console.log("First person: %s, user_id %d", people[0].username, people[0].user_id);
-  //     });
-  //   });
-  // });
-
   }
 }));
-console.log("Finished adding models");
+
+app.use('/', src);
+
+app.set('port', process.env.PORT || 9000);
+
+var server = app.listen(app.get('port'), function () {
+  console.log("App started");
+});
+
 // view engine setup
 // app.set('views', path.join(__dirname, 'views'));
-// app.set('view engine', 'jade');
+// app.set('view engine', 'ejs');
+
+app.set('views', __dirname + '/views');
+app.set('view engine', 'jsx');
+app.engine('jsx', require('express-react-views').createEngine());
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
@@ -108,35 +106,25 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', function (req, res) {
-  // req.models is a reference to models used above in define()
-  // req.models.Roles.create({ type_id: 666, type: "Parent" }, function (err) {
-  //   if (err) throw err;
-
-  //   req.models.Roles.find({ type_id: 1 }, function (err, roles) {
-  //     roles[0].save(function (err) {
-
-  //     });
-  //   });
-  // });
-
-  req.models.Users.create({ username: "user", password: "password", is_active: true, salt: "salt", type_id: 1 }, function (err) {
-    if (err) throw err;
-
-    // query the person table by surname
-    req.models.Users.find({ username: "user" }, function (err, people) {
-      if (err) throw err;
-
-      console.log("People found: %d", people.length);
-      console.log("First person: %s", people[0].username);
-
-      people[0].save(function (err) {
-        if (err) throw err;
-      });
-    });
-  });
+app.use(function(req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
 });
-//app.use('/users', users);
+
+// app.use('/users', users);
+var foo = function () {
+  // do something
+}
+
+// register new users and add to database
+app.post('/api/register', function (req, res) {
+  console.log("Registering user!");
+
+  console.log(req.body.username);
+
+  
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -169,19 +157,5 @@ app.use(function(err, req, res, next) {
   });
 });
 
-/*
-
-// Setup logger
-app.use(morgan(':remote-addr - :remote-user [:date[clf]] ":method :url HTTP/:http-version" :status :res[content-length] :response-time ms'));
-
-// Serve static assets
-app.use(express.static(path.resolve(__dirname, '..', 'build')));
-
-// Always return the main index.html, so react-router render the route in the client
-app.get('*', (req, res) => {
-  res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
-});
-
-*/
 
 module.exports = app;

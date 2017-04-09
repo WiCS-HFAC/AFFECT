@@ -22,6 +22,7 @@ const whole_style = {
     alignContent: "center",
 }
 
+
 export default class Login extends React.Component {
     constructor(props) {
         super(props);
