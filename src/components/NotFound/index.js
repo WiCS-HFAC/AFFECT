@@ -8,7 +8,8 @@ export default class NotFound extends Component {
     const { className } = this.props;
     return (
       <div className={classnames('NotFound', className)}>
-        <h1>404 <small>Not Found :(</small></h1>
+        <h1>404</h1>
+        <h2>Page not found!</h2>
       </div>
     );
   }

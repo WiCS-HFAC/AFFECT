@@ -34,6 +34,7 @@ const Routes = () => (
         <Route path="/login" component={Login} />
         <Route path="/apply" component={Apply} />
         <Route path="/404" component={NotFound} />
+        {/* TODO: Why isnt asterisk acting as a wildcard */}
     </div>
   </Router>
 );
