@@ -42,10 +42,6 @@ class Routes extends Component {
                 <Route path="/apply" component={(props) => Nav(props, Apply)} />
                 <Route path="/404" component={(props) => Nav(props, NotFound)} />
                 {/* TODO: Why isnt asterisk acting as a wildcard */}
-
-                <footer>
-                    <p>Howdy, I wanna be a footer</p>
-                </footer>
                 </div>
             </Router>
         )
