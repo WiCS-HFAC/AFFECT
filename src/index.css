@@ -4,6 +4,17 @@ body {
   font-family: sans-serif;
 }
 
+<<<<<<< HEAD
+=======
+footer {
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    background-color: #B71C1C;
+    bottom: 0px;
+}
+
+>>>>>>> 48f8d3036700ffc569ee2518e27c32f185e463aa
 h1 {
     text-align: center;
 }

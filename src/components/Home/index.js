@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import classnames from 'classnames';
 
 import './style.css';
 
+<<<<<<< HEAD
 const button_style = {
     margin: 15,
     maxWidth: 75,
@@ -20,17 +20,16 @@ const whole_style = {
     flexFlow: "column wrap",
     alignContent: "center",
 }
+=======
+>>>>>>> 48f8d3036700ffc569ee2518e27c32f185e463aa
 
 class Home extends Component {
   render() {
-    const { className } = this.props;
     return (
-      <div className={classnames('Home', className)}>
-        <div className="Home-header">
+      <div>
+        <div>
           <h1>Home</h1>
         </div>
-
-        <p className="Home-intro"> This is the homepage.</p>
       </div>
     );
   }

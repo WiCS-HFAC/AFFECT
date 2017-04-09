@@ -1,5 +1,13 @@
 import React, { Component } from 'react';
-import classnames from 'classnames';
+import baseTheme from './theme.js';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import RaisedButton from 'material-ui/RaisedButton';
+import TextField from 'material-ui/TextField';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import SelectField from 'material-ui/SelectField';
+import MenuItem from 'material-ui/MenuItem';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
 
 import baseTheme from './theme.js';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
@@ -7,7 +15,6 @@ import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import './style.css';
-
 
 
 const button_style = {
@@ -18,6 +25,7 @@ const button_style = {
 const tField_style = {
     alignSelf: "center",
 }
+
 const whole_style = {
     display: "flex",
     flexFlow: "column wrap",
@@ -25,12 +33,12 @@ const whole_style = {
 }
 
 function handleClick() {
-    console.log("A user registered!");
-    alert("!!!");
+  console.log("A user registered!");
+  alert("!!!");
 
-    // console.log(this.state.username);
-    fetch("http://localhost:9000/api/register", { method: "POST", body: {username: this.state.username, password: this.state.password} });
-    // fetch("http://localhost:9000/api/register", { method: "POST", body: JSON.stringify({username: this.state.username, password: this.state.password})});
+  // console.log(this.state.username);
+  fetch("http://localhost:9000/api/register", { method: "POST", body: {username: this.state.username, password: this.state.password} });
+  // fetch("http://localhost:9000/api/register", { method: "POST", body: JSON.stringify({username: this.state.username, password: this.state.password})});
 
 }
 
@@ -39,12 +47,14 @@ export default class Register extends Component {
         super(props);
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            value: 1
         }
     }
+    
+    handleChange = (event, index, value) => this.setState({value});
 
     render() {
-        const { className } = this.props;
         return (
           <div>
             <MuiThemeProvider muiTheme={getMuiTheme(baseTheme)}>
@@ -54,6 +64,7 @@ export default class Register extends Component {
                  hintText="Enter your username"
                  floatingLabelText="Username"
                  style={tField_style}
+
                  onChange = {(event,newValue) => this.setState({username:newValue})}
                 />
                 <br/>
@@ -62,12 +73,77 @@ export default class Register extends Component {
                    hintText="Enter your password"
                    floatingLabelText="Password"
                    style={tField_style}
-                   onChange = {(event,newValue) => this.setState({password:newValue})}
+                   onChange={(event,newValue) => this.setState({password:newValue})}
                 />
                 <br/>
-                <RaisedButton label="Register" primary={true} style={button_style} onClick={handleClick}/>
+                <TextField
+                   type="email"
+                   hintText="Enter your email address"
+                   floatingLabelText="Email"
+                   style={tField_style}
+                   onChange={(event,newValue) => this.setState({password:newValue})}
+                />
+                    <br/>
+                    <div style={tField_style}>
+                <TextField
+                   type="first_name"
+                   hintText="Enter your first name"
+                   floatingLabelText="First Name"
+                   style={tField_style}
+                   onChange={(event,newValue) => this.setState({first_name:newValue})}
+                />  
+                <TextField
+                   type="last_name"
+                   hintText="Enter your last name"
+                   floatingLabelText="Last Name"
+                   style={tField_style}
+                   onChange={(event,newValue) => this.setState({last_name:newValue})}
+                /></div>
+                    <br/>
+                    <div style={tField_style}>
+                <TextField
+                   type="home_phone"
+                   hintText="Enter your home phone number"
+                   floatingLabelText="Home Phone"
+                   style={tField_style}
+                   onChange={(event,newValue) => this.setState({phone_home:newValue})}
+                />  
+                <TextField
+                   type="cell_phone"
+                   hintText="Enter your cell number"
+                   floatingLabelText="Cell Phone"
+                   style={tField_style}
+                   onChange={(event,newValue) => this.setState({phone_cell:newValue})}
+                /></div>
+                    <br/>
+                    <div style={tField_style}>
+                <TextField
+                   type="address"
+                   hintText="Enter your mailing address"
+                   floatingLabelText="Address"
+                   style={tField_style}
+                   onChange={(event,newValue) => this.setState({address:newValue})}
+                />  
+                <TextField
+                   type="blank"
+                   hintText=""
+                   floatingLabelText=""
+                   style={tField_style}
+                /></div>
+                <SelectField
+                  floatingLabelText="Account Type"
+                  style={tField_style}
+                  value={this.state.value}
+                  onChange={this.handleChange}
+                >
+                     <MenuItem value={1} primaryText="Parent" />
+                     <MenuItem value={3} primaryText="Administrator" />
+                     <MenuItem value={2} primaryText="Worker" />
+                </SelectField>
+                <RaisedButton label="Register" primary={true} style={handleClick}/>
             </div>
             </MuiThemeProvider>
+                <img src={require('/Users/msteelha/AFFECT/public/heartgalleryfamilylogo.jpg')} alt="A Family For Every Child Logo" />
           </div>
         );
     }
