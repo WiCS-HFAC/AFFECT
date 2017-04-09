@@ -18,6 +18,7 @@ const whole_style = {
 	alignContent: "center",
 }
 
+
 export default class Home extends Component {
   constructor(props) {
   	super(props);
@@ -27,13 +28,23 @@ export default class Home extends Component {
           <div>
             <MuiThemeProvider muiTheme={getMuiTheme(baseTheme)} style={whole_style}>
             
-            <div>
-              <img src={LogoImg}/>
+            <div style={whole_style}>
               <h1>A Family For Every Child</h1>
-              
+              <br/>
               <h2>Home</h2>
-              
-              <RaisedButton label="Sign Here" primary={true} style={button_style} onClick={(event) => this.handleClick(event)}/>
+              <br/>
+              <div>
+              	<img src={LogoImg}/>	
+              	<h3>Contact Information:</h3>
+              	<ur>
+              	  1675 West 11th Ave <br/>
+              	  Eugene, OR 97402 <br/><br/>
+              	  Phone: 541-343-2856 <br/>
+              	  Toll Free: 877-343-2856 <br/>
+              	  Fax: 541-343-2866 <br/>
+              	  Email: info@familyforeverychild.com <br/>
+              	</ur> 
+              </div>
             </div>
             </MuiThemeProvider>
           </div>
