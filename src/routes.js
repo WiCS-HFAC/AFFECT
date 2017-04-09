@@ -5,6 +5,7 @@ import Register from './components/Register';
 import Login from './components/Login';
 import Apply from './components/Apply';
 import NotFound from './components/NotFound';
+
 import theme from './theme';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
@@ -42,6 +43,9 @@ class Routes extends Component {
                 <Route path="/apply" component={(props) => Nav(props, Apply)} />
                 <Route path="/404" component={(props) => Nav(props, NotFound)} />
                 {/* TODO: Why isnt asterisk acting as a wildcard */}
+
+                <footer>
+                </footer>
                 </div>
             </Router>
         )

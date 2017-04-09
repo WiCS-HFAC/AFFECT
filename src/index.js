@@ -10,7 +10,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Routes from './routes.jsx';
+import Routes from './routes.js';
 
 import './index.css';
 
