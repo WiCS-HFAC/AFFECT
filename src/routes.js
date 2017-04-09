@@ -20,32 +20,7 @@ const link_style = {
     paddingBottom: "17px"
 }
 
-export default class Routes extends Component {
-    constructor(props) {
-        super(props);
 
-    }
-
-    render() {
-        const { className } = this.props;
-        return (
-          <div>
-            <MuiThemeProvider>
-            <div>
-            	<RaisedButton label="Home" primary={true} style={style} onClick={(event) => <Route exact path="/" component={Home} />}/>
-            	<RaisedButton label="Register" primary={true} style={style} onClick={(event) => <Route path="/register" component={Register} />}/>
-            	<RaisedButton label="Login" primary={true} style={style} onClick={(event) => <Route path="/login" component={Login} />}/>
-            	<RaisedButton label="Apply" primary={true} style={style} onClick={(event) => <Route path="/apply" component={Apply} />}/>
-            	
-            </div>
-            </MuiThemeProvider>
-          </div>
-        );
-    }
-
-}
-
-/*
 const Routes = () => (
   <Router>
     <div>
@@ -54,9 +29,6 @@ const Routes = () => (
         <Link to="/login" style={link_style}>Login</Link>
         <Link to="/apply" style={link_style}>Apply</Link>
         
-
-        
-
         <Route exact path="/" component={Home} />
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
@@ -67,4 +39,4 @@ const Routes = () => (
 );
 
 export default Routes;
-*/
+
