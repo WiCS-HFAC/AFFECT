@@ -42,11 +42,12 @@ export default class Login extends React.Component {
         return (
           <div>
             <MuiThemeProvider>
-            <div>
+            <div style={whole_style}>
               <h1>Login</h1>
               <TextField
               hintText="Enter your Username"
               floatingLabelText="Username"
+              style={tField_style}
               onChange = {(event,newValue) => this.setState({username:newValue})}
               />
               <br/>
@@ -55,12 +56,13 @@ export default class Login extends React.Component {
               type="password"
               hintText="Enter your Password"
               floatingLabelText="Password"
+              style={tField_style}
               onChange = {(event,newValue) => this.setState({password:newValue})}
               />
               <br/>
 
-              <RaisedButton label="Login" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
-              <RaisedButton label="Register" primary={false} style={style} onClick={() => { this.props.history.push('/register')}}/>
+              <RaisedButton label="Login" primary={true} style={button_style} onClick={(event) => this.handleClick(event)}/>
+              <RaisedButton label="Register" primary={false} style={button_style} onClick={() => { this.props.history.push('/register')}}/>
 
             </div>
             </MuiThemeProvider>
