@@ -34,20 +34,6 @@ const Nav = (props, Comp) => {
 }
 
 class Routes extends Component {
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: 'a',
-        };
-    }
-
-    handleChange = (value) => {
-        this.setState({
-            value: value,
-        });
-    };
-
     render() {
         return  (
             <Router>
@@ -58,6 +44,10 @@ class Routes extends Component {
                 <Route path="/apply" component={(props) => Nav(props, Apply)} />
                 <Route path="/404" component={(props) => Nav(props, NotFound)} />
                 {/* TODO: Why isnt asterisk acting as a wildcard */}
+
+                <footer>
+                    <p>Howdy, I wanna be a footer</p>
+                </footer>
                 </div>
             </Router>
         )
