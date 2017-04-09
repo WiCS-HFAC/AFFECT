@@ -1,19 +1,9 @@
-<<<<<<< HEAD
-import React, { Component, Link } from 'react';
-import classnames from 'classnames';
-
-=======
 import React from 'react';
->>>>>>> 48f8d3036700ffc569ee2518e27c32f185e463aa
 import baseTheme from './theme.js';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
-<<<<<<< HEAD
-
-=======
->>>>>>> 48f8d3036700ffc569ee2518e27c32f185e463aa
 import './style.css';
 
 
@@ -24,7 +14,6 @@ const button_style = {
 
 const tField_style = {
     alignSelf: "center",
-<<<<<<< HEAD
 }
 
 const whole_style = {
@@ -33,16 +22,7 @@ const whole_style = {
     alignContent: "center",
 }
 
-=======
-}
 
-const whole_style = {
-    display: "flex",
-    flexFlow: "column wrap",
-    alignContent: "center",
-}
-
->>>>>>> 48f8d3036700ffc569ee2518e27c32f185e463aa
 export default class Login extends React.Component {
     constructor(props) {
         super(props);
@@ -63,11 +43,7 @@ export default class Login extends React.Component {
               hintText="Enter your Username"
               floatingLabelText="Username"
               style={tField_style}
-<<<<<<< HEAD
-              onChange = {(event,newValue) => this.setState({username:newValue})}
-=======
               onChange={(event,newValue) => this.setState({username:newValue})}
->>>>>>> 48f8d3036700ffc569ee2518e27c32f185e463aa
               />
               <br/>
 
@@ -76,11 +52,7 @@ export default class Login extends React.Component {
               hintText="Enter your Password"
               floatingLabelText="Password"
               style={tField_style}
-<<<<<<< HEAD
-              onChange = {(event,newValue) => this.setState({password:newValue})}
-=======
               onChange={(event,newValue) => this.setState({password:newValue})}
->>>>>>> 48f8d3036700ffc569ee2518e27c32f185e463aa
               />
               <br/>
 
