@@ -1,0 +1,13 @@
+h1 {
+    
+    background-color: #B71C1C;
+    height: 50px;
+    padding-top: 20px;
+    color: white;
+}
+
+span {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}

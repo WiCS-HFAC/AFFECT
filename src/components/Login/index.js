@@ -1,6 +1,4 @@
-import React, { Component, Link } from 'react';
-import classnames from 'classnames';
-
+import React from 'react';
 import baseTheme from './theme.js';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -35,7 +33,6 @@ export default class Login extends React.Component {
     }
 
     render() {
-        const { className } = this.props;
         return (
           <div>
             <MuiThemeProvider muiTheme={getMuiTheme(baseTheme)} style={whole_style}>
@@ -45,7 +42,7 @@ export default class Login extends React.Component {
               hintText="Enter your Username"
               floatingLabelText="Username"
               style={tField_style}
-              onChange = {(event,newValue) => this.setState({username:newValue})}
+              onChange={(event,newValue) => this.setState({username:newValue})}
               />
               <br/>
 
@@ -54,7 +51,7 @@ export default class Login extends React.Component {
               hintText="Enter your Password"
               floatingLabelText="Password"
               style={tField_style}
-              onChange = {(event,newValue) => this.setState({password:newValue})}
+              onChange={(event,newValue) => this.setState({password:newValue})}
               />
               <br/>
 

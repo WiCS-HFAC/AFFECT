@@ -1,5 +1,5 @@
 import {
-  red500, red700,
+  red900, red700,
   redA700,
   grey100, grey300, grey400, grey500,
   white, darkBlack, fullBlack,
@@ -17,7 +17,7 @@ export default {
   fontFamily: 'Roboto, sans-serif',
   borderRadius: 2,
   palette: {
-  primary1Color: red500,
+  primary1Color: red900,
   primary2Color: red700,
   primary3Color: grey400,
   accent1Color: redA700,
@@ -27,7 +27,7 @@ export default {
   alternateTextColor: white,
   canvasColor: white,
   borderColor: grey300,
-  pickerHeaderColor: red500,
+  pickerHeaderColor: red900,
   shadowColor: fullBlack,
   },
 };

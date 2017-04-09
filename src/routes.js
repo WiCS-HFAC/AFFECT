@@ -1,10 +1,5 @@
-import React, { Component } from 'react';
-import classnames from 'classnames';
+import React from 'react';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import RaisedButton from 'material-ui/RaisedButton';
-
 import Home from './components/Home';
 import Register from './components/Register';
 import Login from './components/Login';
@@ -22,9 +17,7 @@ const link_style = {
     textDecoration: "None",
 }
 
-const navBar = {
-    borderBottom: "1px lightgrey solid",
-}
+
 
 
 const Routes = () => (

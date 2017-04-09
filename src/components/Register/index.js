@@ -127,6 +127,7 @@ export default class Register extends Component {
                 <RaisedButton label="Register" primary={true} style={button_style} onClick={(event) => this.handleClick(event)}/>
             </div>
             </MuiThemeProvider>
+                <img src={require('/Users/msteelha/AFFECT/public/heartgalleryfamilylogo.jpg')} alt="A Family For Every Child Logo" />
           </div>
         );
     }
