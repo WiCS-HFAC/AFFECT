@@ -1,5 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
+import classnames from 'classnames';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import RaisedButton from 'material-ui/RaisedButton';
 
 import Home from './components/Home';
 import Register from './components/Register';
@@ -7,18 +11,24 @@ import Login from './components/Login';
 import Apply from './components/Apply';
 import NotFound from './components/NotFound';
 
+
+const link_style = {
+    color: "black",
+    display: "inline-block",
+    paddingLeft: "17%",
+    paddingTop: "17px",
+    paddingBottom: "17px"
+}
+
+
 const Routes = () => (
   <Router>
     <div>
-        <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/register">Register</Link></li>
-            <li><Link to="/login">Login</Link></li>
-            <li><Link to="/apply">Apply</Link></li>
-        </ul>
-
-        <hr/>
-
+        <Link to="/" style={link_style}>Home</Link>
+        <Link to="/register" style={link_style}>Register</Link>
+        <Link to="/login" style={link_style}>Login</Link>
+        <Link to="/apply" style={link_style}>Apply</Link>
+        
         <Route exact path="/" component={Home} />
         <Route path="/register" component={Register} />
         <Route path="/login" component={Login} />
@@ -30,3 +40,4 @@ const Routes = () => (
 );
 
 export default Routes;
+

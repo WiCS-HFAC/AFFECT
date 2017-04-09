@@ -1,23 +1,39 @@
 import React, { Component, Link } from 'react';
 import classnames from 'classnames';
-
+import baseTheme from './theme.js';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 import './style.css';
 
-const style = {
+const button_style = {
     margin: 15,
-};
+    maxWidth: 75,
+    alignSelf: "center",
+}
+const appBar_style = {
+    display: "flex",
+   flexDirection: "row",
+}
+const tField_style = {
+    alignSelf: "center",
+}
+const whole_style = {
+    display: "flex",
+    flexFlow: "column wrap",
+    alignContent: "center",
+}
 
-export default class Login extends Component {
+export default class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             username: '',
-            password: ''
+            password: '',
+            open: false
         }
     }
 
@@ -45,6 +61,7 @@ export default class Login extends Component {
 
               <RaisedButton label="Login" primary={true} style={style} onClick={(event) => this.handleClick(event)}/>
               <RaisedButton label="Register" primary={false} style={style} onClick={() => { this.props.history.push('/register')}}/>
+
             </div>
             </MuiThemeProvider>
           </div>
