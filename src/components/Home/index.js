@@ -14,7 +14,7 @@ const button_style = {
 
 const whole_style = {
 	display: "flex",
-	flexFlow: "columnWrap",
+	flexFlow: "column wrap",
 	alignContent: "center",
 }
 
@@ -33,8 +33,7 @@ export default class Home extends Component {
               <br/>
               <h2>Home</h2>
               <br/>
-              <div>
-              	<img src={LogoImg}/>	
+              	<img src={LogoImg} width={200}/>	
               	<h3>Contact Information:</h3>
               	<ur>
               	  1675 West 11th Ave <br/>
@@ -44,7 +43,6 @@ export default class Home extends Component {
               	  Fax: 541-343-2866 <br/>
               	  Email: info@familyforeverychild.com <br/>
               	</ur> 
-              </div>
             </div>
             </MuiThemeProvider>
           </div>

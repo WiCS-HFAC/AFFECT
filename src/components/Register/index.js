@@ -72,7 +72,7 @@ export default class Register extends Component {
                    hintText="Enter your email address"
                    floatingLabelText="Email"
                    style={tField_style}
-                   onChange={(event,newValue) => this.setState({password:newValue})}
+                   onChange={(event,newValue) => this.setState({email:newValue})}
                 />
                 <br/>
                 <div style={tField_style}>

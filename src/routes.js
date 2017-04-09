@@ -44,8 +44,7 @@ class Routes extends Component {
                 <Route path="/404" component={(props) => Nav(props, NotFound)} />
                 {/* TODO: Why isnt asterisk acting as a wildcard */}
 
-                <footer>
-                </footer>
+                
                 </div>
             </Router>
         )
