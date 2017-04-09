@@ -34,10 +34,10 @@ class Routes extends Component {
                 <div>
                 <MuiThemeProvider muiTheme={muiTheme}>
                     <Tabs value={this.state.value} onChange={this.handleChange}>
-                        <Tab label="Home" value="a" route="/" />
-                        <Tab label="Login" value="b" route="/login" />
-                        <Tab label="Register" value="c" route="/register" />
-                        <Tab label="Apply" value="d" route="/apply" />
+                        <Tab label="Home" value="a" />
+                        <Tab label="Login" value="b" />
+                        <Tab label="Register" value="c" />
+                        <Tab label="Apply" value="d" />
                     </Tabs>
                 </MuiThemeProvider>
 
