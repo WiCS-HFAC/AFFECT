@@ -9,11 +9,6 @@ import MenuItem from 'material-ui/MenuItem';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
-import baseTheme from './theme.js';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import RaisedButton from 'material-ui/RaisedButton';
-import TextField from 'material-ui/TextField';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import './style.css';
 
 
@@ -143,7 +138,7 @@ export default class Register extends Component {
                 <RaisedButton label="Register" primary={true} style={handleClick}/>
             </div>
             </MuiThemeProvider>
-                <img src={require('/Users/msteelha/AFFECT/public/heartgalleryfamilylogo.jpg')} alt="A Family For Every Child Logo" />
+                <img src={require('./heartgalleryfamilylogo.jpg')} alt="A Family For Every Child Logo" />
           </div>
         );
     }

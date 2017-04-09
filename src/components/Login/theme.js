@@ -1,9 +1,5 @@
 import {
-<<<<<<< HEAD
-  red500, red700,
-=======
   red900, red700,
->>>>>>> 48f8d3036700ffc569ee2518e27c32f185e463aa
   redA700,
   grey100, grey300, grey400, grey500,
   white, darkBlack, fullBlack,
@@ -21,11 +17,7 @@ export default {
   fontFamily: 'Roboto, sans-serif',
   borderRadius: 2,
   palette: {
-<<<<<<< HEAD
-  primary1Color: red500,
-=======
   primary1Color: red900,
->>>>>>> 48f8d3036700ffc569ee2518e27c32f185e463aa
   primary2Color: red700,
   primary3Color: grey400,
   accent1Color: redA700,
@@ -35,11 +27,7 @@ export default {
   alternateTextColor: white,
   canvasColor: white,
   borderColor: grey300,
-<<<<<<< HEAD
-  pickerHeaderColor: red500,
-=======
   pickerHeaderColor: red900,
->>>>>>> 48f8d3036700ffc569ee2518e27c32f185e463aa
   shadowColor: fullBlack,
   },
 };

@@ -122,6 +122,8 @@ app.post('/api/register', function (req, res) {
   console.log("Registering user!");
 
   console.log(req.body.username);
+
+  
 });
 
 // catch 404 and forward to error handler
