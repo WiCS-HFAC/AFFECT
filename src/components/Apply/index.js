@@ -44,9 +44,7 @@ const card_style = {
   window.open("http://www.afamilyforeverychild.org/Adoption/TheBasics/OrientationAndTraining.php");
 }
 
-export default class Apply extends React.Component {  
-    
-    
+export default class Apply extends React.Component {
   constructor(props) {
     super(props);
 
@@ -82,10 +80,10 @@ export default class Apply extends React.Component {
             <h4 style={dark_grey}>Form Progress:</h4>
         <LinearProgress mode="determinate" value={this.state.completed} />
         <br/>
-<span>
-<Card style={card_style}>
-    <h2 style={bg_grey}>Resources:</h2>
-    <span>
+        <span>
+        <Card style={card_style}>
+        <h2 style={bg_grey}>Resources:</h2>
+        <span>
         <br/>
         <Chip
             backgroundColor={grey200}
@@ -277,7 +275,7 @@ export default class Apply extends React.Component {
                 </Avatar>
             reference19846714
         </Chip>
-    </span>  
+    </span>
 </Card>
 <br/>
 <Card style={card_style}>

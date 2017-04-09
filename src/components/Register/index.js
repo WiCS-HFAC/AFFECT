@@ -46,7 +46,7 @@ export default class Register extends Component {
             value: 1
         }
     }
-    
+
     handleChange = (event, index, value) => this.setState({value});
 
     render() {
@@ -54,7 +54,7 @@ export default class Register extends Component {
           <div>
             <MuiThemeProvider muiTheme={getMuiTheme(baseTheme)}>
             <div style={whole_style}>
-              <h1>Register</h1>
+                <h1>Register</h1>
                 <TextField
                  hintText="Enter your username"
                  floatingLabelText="Username"
@@ -78,68 +78,67 @@ export default class Register extends Component {
                    style={tField_style}
                    onChange={(event,newValue) => this.setState({password:newValue})}
                 />
-                    <br/>
-                    <div style={tField_style}>
-                <TextField
-                   type="first_name"
-                   hintText="Enter your first name"
-                   floatingLabelText="First Name"
-                   style={tField_style}
-                   onChange={(event,newValue) => this.setState({first_name:newValue})}
-                />  
-                <TextField
-                   type="last_name"
-                   hintText="Enter your last name"
-                   floatingLabelText="Last Name"
-                   style={tField_style}
-                   onChange={(event,newValue) => this.setState({last_name:newValue})}
-                /></div>
-                    <br/>
-                    <div style={tField_style}>
-                <TextField
-                   type="home_phone"
-                   hintText="Enter your home phone number"
-                   floatingLabelText="Home Phone"
-                   style={tField_style}
-                   onChange={(event,newValue) => this.setState({phone_home:newValue})}
-                />  
-                <TextField
-                   type="cell_phone"
-                   hintText="Enter your cell number"
-                   floatingLabelText="Cell Phone"
-                   style={tField_style}
-                   onChange={(event,newValue) => this.setState({phone_cell:newValue})}
-                /></div>
-                    <br/>
-                    <div style={tField_style}>
-                <TextField
-                   type="address"
-                   hintText="Enter your mailing address"
-                   floatingLabelText="Address"
-                   style={tField_style}
-                   onChange={(event,newValue) => this.setState({address:newValue})}
-                />  
-                <TextField
-                   type="blank"
-                   hintText=""
-                   floatingLabelText=""
-                   style={tField_style}
-                /></div>
-                <SelectField
-                  floatingLabelText="Account Type"
-                  style={tField_style}
-                  value={this.state.value}
-                  onChange={this.handleChange}
-                >
-                     <MenuItem value={1} primaryText="Parent" />
-                     <MenuItem value={3} primaryText="Administrator" />
-                     <MenuItem value={2} primaryText="Worker" />
+                <br/>
+                <div style={tField_style}>
+                    <TextField
+                       type="first_name"
+                       hintText="Enter your first name"
+                       floatingLabelText="First Name"
+                       style={tField_style}
+                       onChange={(event,newValue) => this.setState({first_name:newValue})}
+                    />
+                    <TextField
+                       type="last_name"
+                       hintText="Enter your last name"
+                       floatingLabelText="Last Name"
+                       style={tField_style}
+                       onChange={(event,newValue) => this.setState({last_name:newValue})}
+                    />
+                </div>
+
+                <br/>
+
+                <div style={tField_style}>
+                    <TextField
+                       type="home_phone"
+                       hintText="Enter your home phone number"
+                       floatingLabelText="Home Phone"
+                       style={tField_style}
+                       onChange={(event,newValue) => this.setState({phone_home:newValue})}
+                    />
+                    <TextField
+                       type="cell_phone"
+                       hintText="Enter your cell number"
+                       floatingLabelText="Cell Phone"
+                       style={tField_style}
+                       onChange={(event,newValue) => this.setState({phone_cell:newValue})}
+                    />
+                </div>
+
+                <br/>
+
+                <div style={tField_style}>
+                    <TextField
+                       type="address"
+                       fieldWidth="true"
+                       hintText="Enter your mailing address"
+                       floatingLabelText="Address"
+                       multiLine={true}
+                       maxLength="2"
+                       style={tField_style}
+                       onChange={(event,newValue) => this.setState({address:newValue})}
+                    />
+                </div>
+
+                <SelectField floatingLabelText="Account Type" style={tField_style} value={this.state.value} onChange={this.handleChange}>
+                    <MenuItem value={1} primaryText="Parent" />
+                    <MenuItem value={3} primaryText="Administrator" />
+                    <MenuItem value={2} primaryText="Worker" />
                 </SelectField>
                 <RaisedButton label="Register" primary={true} style={handleClick}/>
             </div>
             </MuiThemeProvider>
-                <img src={require('./heartgalleryfamilylogo.jpg')} alt="A Family For Every Child Logo" />
-          </div>
+            </div>
         );
     }
 }
